@@ -4,23 +4,22 @@ var played: bool
 
 
 func enter() -> void:
-	card_ui.color.color = Color.DARK_VIOLET
-	card_ui.state.text = "RELEASED"
-
 	played = false
 
 	if not card_ui.targets.is_empty():
 		played = true
-		print("play card for target(s) ", card_ui.targets)
+		card_ui.play()
 
 
-# func _process(_delta: float) -> void:
-# 	if not played:
-# 		print("Transitioning to BASE...")
-# 		transition_requested.emit(self, CardState.State.BASE)
+func _process(_delta: float) -> void:
+	if not played and card_ui.card_state_machine.current_state.state == CardState.State.RELEASED:
+		print("Transitioning to BASE...", self)
+		transition_requested.emit(self, CardState.State.BASE)
 
 
 func on_input(_event: InputEvent) -> void:
 	if played:
 		return
 	transition_requested.emit(self, CardState.State.BASE)
+
+

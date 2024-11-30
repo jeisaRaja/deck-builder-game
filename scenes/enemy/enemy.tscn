@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctldiiesaa175"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_564os"]
+[ext_resource type="Texture2D" uid="uid://ukld5o613i0a" path="res://art/tile_0122.png" id="1_uebw7"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_o3oqp"]
+[ext_resource type="PackedScene" uid="uid://co1xs4jn8x7mm" path="res://scenes/ui/stats_ui.tscn" id="3_6vnpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uh6q"]
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_564os")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uebw7")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(20, 0)
+rotation = -1.5708
+texture = ExtResource("2_o3oqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4uh6q")
+
+[node name="StatsUI" parent="." instance=ExtResource("3_6vnpp")]
+offset_top = 11.0
+offset_bottom = 27.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

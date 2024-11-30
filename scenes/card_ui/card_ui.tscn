@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c83olyue4puvj"]
+[gd_scene load_steps=12 format=3 uid="uid://c83olyue4puvj"]
 
 [ext_resource type="Theme" uid="uid://cqq4avqv8fxnl" path="res://main_theme.tres" id="1_tjdyb"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="1_w86n0"]
+[ext_resource type="StyleBox" uid="uid://c1sl41dtius2y" path="res://scenes/card_ui/icon/card_base_stylebox.tres" id="2_qp17g"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_t5gf3"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_ydwih"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_rkgv7"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_click_state.gd" id="5_qnckm"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_4d15k"]
@@ -24,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w86n0")
 
-[node name="Color" type="ColorRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,24 +34,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.3283, 0.405721, 0.221793, 1)
+theme_override_styles/panel = ExtResource("2_qp17g")
 
-[node name="State" type="Label" parent="."]
-texture_filter = 1
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+offset_right = 10.0
+offset_bottom = 10.0
+theme = ExtResource("1_tjdyb")
+text = "2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -9.5
-offset_top = -3.0
-offset_right = 9.5
-offset_bottom = 3.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_tjdyb")
-text = "State"
+texture = ExtResource("3_ydwih")
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

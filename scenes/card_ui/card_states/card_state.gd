@@ -8,6 +8,7 @@ signal transition_requested(from: CardState, to: State)
 
 var card_ui: CardUI
 
+
 func enter() -> void:
 	pass
 
@@ -26,6 +27,7 @@ func on_gui_input(_event: InputEvent) -> void:
 
 func on_mouse_entered() -> void:
 	pass
-	
+
+
 func on_mouse_exited() -> void:
 	pass

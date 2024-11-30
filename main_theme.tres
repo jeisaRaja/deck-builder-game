@@ -1,7 +1,12 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cqq4avqv8fxnl"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cqq4avqv8fxnl"]
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_hjy26"]
+[ext_resource type="StyleBox" uid="uid://c1sl41dtius2y" path="res://scenes/card_ui/icon/card_base_stylebox.tres" id="1_k54kx"]
 
 [resource]
 default_font = ExtResource("1_hjy26")
 default_font_size = 6
+AcceptDialog/styles/panel = null
+GraphEdit/styles/menu_panel = null
+GraphEdit/styles/panel = null
+Panel/styles/panel = ExtResource("1_k54kx")
