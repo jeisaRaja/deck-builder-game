@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cety0eeaihdh"]
+[gd_scene load_steps=16 format=3 uid="uid://cety0eeaihdh"]
 
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_s22jn"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_xlvg8"]
 [ext_resource type="PackedScene" uid="uid://ctldiiesaa175" path="res://scenes/enemy/enemy.tscn" id="2_gwweo"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_ocekb"]
@@ -10,12 +11,16 @@
 [ext_resource type="Resource" uid="uid://b3pf4xqxsnea5" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_q1oi6"]
 [ext_resource type="Resource" uid="uid://s6sy21u5a2e3" path="res://characters/warrior/cards/warrior_block.tres" id="5_3yu7u"]
 [ext_resource type="Resource" uid="uid://bclgfakb0trnk" path="res://characters/warrior/warrior.tres" id="5_x7xgc"]
+[ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_syjos"]
 [ext_resource type="PackedScene" uid="uid://ch1u5xam5wvjq" path="res://scenes/ui/mana_ui.tscn" id="11_23i6g"]
+[ext_resource type="PackedScene" uid="uid://bwsk84gowe5kq" path="res://scenes/ui/tooltip.tscn" id="12_xek6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nktes"]
 size = Vector2(256, 100)
 
 [node name="Battle" type="Node2D"]
+script = ExtResource("1_s22jn")
+char_stats = ExtResource("5_x7xgc")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -42,6 +47,7 @@ stats = ExtResource("3_p14dh")
 position = Vector2(58, 70)
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("7_syjos")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7
@@ -74,3 +80,7 @@ char_stats = ExtResource("5_x7xgc")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("11_23i6g")]
 char_stats = ExtResource("5_x7xgc")
+
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("12_xek6h")]
+offset_top = 6.0
+offset_bottom = 42.0

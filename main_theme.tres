@@ -10,3 +10,4 @@ AcceptDialog/styles/panel = null
 GraphEdit/styles/menu_panel = null
 GraphEdit/styles/panel = null
 Panel/styles/panel = ExtResource("1_k54kx")
+PanelContainer/styles/panel = ExtResource("1_k54kx")
