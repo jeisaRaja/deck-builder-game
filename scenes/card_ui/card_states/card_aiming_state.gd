@@ -5,9 +5,10 @@ const MOUSE_Y_SNAPBACK_THRESHOLD := 140
 
 func enter() -> void:
 	card_ui.targets.clear()
+	var card_size := card_ui.size
 
-	var offset := Vector2(card_ui.parent.size.x / 2, -card_ui.size.y / 2)
-	offset.x -= card_ui.size.x / 2
+	var offset := Vector2(card_ui.parent.size.x / 2, -card_size.y / 2)
+	offset.x -= card_size.x / 2
 
 	card_ui.animate_to_position(card_ui.parent.global_position + offset, 0.2)
 	card_ui.drop_point_detector.monitoring = false

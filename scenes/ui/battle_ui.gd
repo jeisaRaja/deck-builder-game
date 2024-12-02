@@ -11,3 +11,4 @@ extends CanvasLayer
 func _set_char_stats(value: CharacterStats):
 	char_stats = value
 	mana_ui.char_stats = char_stats
+	hand.char_stats = char_stats

@@ -1,15 +1,22 @@
 class_name Hand
 extends HBoxContainer
 
+@export var char_stats: CharacterStats
+@onready var card_ui := preload("res://scenes/card_ui/card_ui.tscn")
 var cards_played_this_turn := 0
 
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
-	for child in get_children():
-		var card_ui := child as CardUI
-		card_ui.reparent_requested.connect(_on_card_ui_reparent_requested)
-		card_ui.parent = self
+
+
+func add_card(card: Card):
+	var new_card_ui: CardUI = card_ui.instantiate()
+	add_child(new_card_ui)
+	new_card_ui.reparent_requested.connect(_on_card_ui_reparent_requested)
+	new_card_ui.card = card
+	new_card_ui.char_stats = char_stats
+	new_card_ui.parent = self
 
 
 func _on_card_played(_card: Card):
