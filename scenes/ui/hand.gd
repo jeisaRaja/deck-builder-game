@@ -19,6 +19,15 @@ func add_card(card: Card):
 	new_card_ui.parent = self
 
 
+func discard_card(card: CardUI):
+	card.queue_free()
+
+
+func disable_hand():
+	for card in get_children():
+		card.disabled = true
+
+
 func _on_card_played(_card: Card):
 	cards_played_this_turn += 1
 

@@ -1,12 +1,55 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cqq4avqv8fxnl"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cqq4avqv8fxnl"]
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_hjy26"]
 [ext_resource type="StyleBox" uid="uid://c1sl41dtius2y" path="res://scenes/card_ui/icon/card_base_stylebox.tres" id="1_k54kx"]
+[ext_resource type="StyleBox" uid="uid://o1t8r6idbj0y" path="res://scenes/card_ui/icon/card_hover_stylebox.tres" id="2_xdu0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txqo1"]
+bg_color = Color(0.443137, 0.301961, 0.219608, 0.470588)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.160629, 0.160629, 0.160629, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sv812"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqqbl"]
+bg_color = Color(0.442486, 0.301221, 0.219604, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.323213, 0.323213, 0.323213, 1)
 
 [resource]
 default_font = ExtResource("1_hjy26")
 default_font_size = 6
 AcceptDialog/styles/panel = null
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 6
+Button/fonts/font = ExtResource("1_hjy26")
+Button/styles/disabled = SubResource("StyleBoxFlat_txqo1")
+Button/styles/focus = SubResource("StyleBoxEmpty_sv812")
+Button/styles/hover = ExtResource("2_xdu0x")
+Button/styles/normal = ExtResource("1_k54kx")
+Button/styles/pressed = SubResource("StyleBoxFlat_aqqbl")
 GraphEdit/styles/menu_panel = null
 GraphEdit/styles/panel = null
 Panel/styles/panel = ExtResource("1_k54kx")
