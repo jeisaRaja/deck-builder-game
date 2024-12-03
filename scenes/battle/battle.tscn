@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cety0eeaihdh"]
+[gd_scene load_steps=16 format=3 uid="uid://cety0eeaihdh"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_s22jn"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_xlvg8"]
 [ext_resource type="PackedScene" uid="uid://ctldiiesaa175" path="res://scenes/enemy/enemy.tscn" id="2_gwweo"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_ocekb"]
 [ext_resource type="PackedScene" uid="uid://cbs4vygj1f1cu" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_dl1kg"]
-[ext_resource type="Resource" uid="uid://dchebyu5oop7n" path="res://enemies/spider/test_enemy.tres" id="3_p14dh"]
 [ext_resource type="PackedScene" uid="uid://cyfdgy0ye4yix" path="res://scenes/player/player.tscn" id="4_ha4hb"]
+[ext_resource type="Resource" uid="uid://ct2u4j2it4rcr" path="res://enemies/spider/spider_enemy.tres" id="5_2tyqu"]
 [ext_resource type="Resource" uid="uid://bclgfakb0trnk" path="res://characters/warrior/warrior.tres" id="5_x7xgc"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="6_76iax"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_syjos"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_rhk8d"]
 [ext_resource type="PackedScene" uid="uid://ch1u5xam5wvjq" path="res://scenes/ui/mana_ui.tscn" id="11_23i6g"]
@@ -36,14 +37,17 @@ position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_nktes")
 debug_color = Color(0, 0.6, 0.701961, 0.290196)
 
-[node name="Enemy" parent="." instance=ExtResource("2_gwweo")]
-position = Vector2(186, 72)
-stats = ExtResource("3_p14dh")
-
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_dl1kg")]
 
 [node name="Player" parent="." instance=ExtResource("4_ha4hb")]
 position = Vector2(58, 70)
+
+[node name="EnemyHandler" type="Node2D" parent="."]
+script = ExtResource("6_76iax")
+
+[node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_gwweo")]
+position = Vector2(186, 72)
+stats = ExtResource("5_2tyqu")
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
 script = ExtResource("8_rhk8d")
