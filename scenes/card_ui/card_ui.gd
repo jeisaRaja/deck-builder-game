@@ -73,7 +73,6 @@ func _set_char_stats(value: CharacterStats):
 func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
 	if used_card == self:
 		return
-	print("disabled")
 	disabled = true
 
 

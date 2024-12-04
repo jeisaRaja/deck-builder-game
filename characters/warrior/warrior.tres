@@ -9,5 +9,5 @@ script = ExtResource("1_nslsu")
 starting_deck = ExtResource("3_2ut71")
 cards_per_turn = 4
 max_mana = 3
-max_health = 35
+max_health = 5
 art = ExtResource("1_aku7b")

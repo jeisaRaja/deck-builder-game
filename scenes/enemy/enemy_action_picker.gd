@@ -39,8 +39,6 @@ func get_chance_based_action() -> EnemyAction:
 		action = child as EnemyAction
 		if not action or action.type != EnemyAction.Type.CHANCE_BASED:
 			continue
-		print("accumulated weight ", action.accumulated_weight)
-		print("roll ", roll)
 		if action.accumulated_weight >= roll:
 			return action
 	return null
