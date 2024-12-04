@@ -22,6 +22,13 @@ func reset_mana() -> void:
 	stats_changed.emit()
 
 
+func take_damage(damage: int):
+	var initial_health := health
+	super.take_damage(damage)
+	if initial_health > health:
+		Events.player_hit.emit()
+
+
 func can_play_card(card: Card) -> bool:
 	return mana >= card.cost
 

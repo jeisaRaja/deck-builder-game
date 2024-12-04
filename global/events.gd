@@ -12,6 +12,7 @@ signal player_hand_drawn
 signal player_hand_discarded
 signal player_turn_ended
 signal player_died
+signal player_hit
 
 signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended

@@ -13,7 +13,6 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/icon/card_hover_stylebox.t
 @onready var panel = $Panel
 @onready var cost = $Cost
 @onready var icon = $Icon
-@onready var original_index := self.get_index()
 
 @export var card: Card:
 	set = _set_card
@@ -21,6 +20,7 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/icon/card_hover_stylebox.t
 @export var char_stats: CharacterStats:
 	set = _set_char_stats
 
+var original_index := 0
 var parent: Control
 var tween: Tween
 var playable := true:

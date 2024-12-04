@@ -1,9 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfe5ibytalerx"]
+[gd_scene load_steps=12 format=3 uid="uid://dfe5ibytalerx"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_mufe0"]
 [ext_resource type="Script" path="res://enemies/spider/spider_attack_action.gd" id="2_fbe3a"]
 [ext_resource type="Script" path="res://enemies/spider/spider_block_action.gd" id="3_4gbpe"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://art/tile_0103.png" id="3_55sy2"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_52onw"]
 [ext_resource type="Script" path="res://enemies/spider/spider_mega_block_action.gd" id="4_o12fj"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://art/tile_0101.png" id="6_p2fgx"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://art/tile_0102.png" id="8_wc7id"]
+
+[sub_resource type="Resource" id="Resource_bf1ep"]
+script = ExtResource("4_52onw")
+icon = ExtResource("3_55sy2")
+number = "7"
+
+[sub_resource type="Resource" id="Resource_4qqpp"]
+script = ExtResource("4_52onw")
+icon = ExtResource("6_p2fgx")
+number = ""
+
+[sub_resource type="Resource" id="Resource_a6qw0"]
+script = ExtResource("4_52onw")
+icon = ExtResource("8_wc7id")
+number = ""
 
 [node name="SpiderEnemyAI" type="Node"]
 script = ExtResource("1_mufe0")
@@ -11,12 +30,15 @@ script = ExtResource("1_mufe0")
 [node name="AttackAction" type="Node" parent="."]
 script = ExtResource("2_fbe3a")
 type = 1
+intent = SubResource("Resource_bf1ep")
 chance_weight = 1.0
 
 [node name="BlockAction" type="Node" parent="."]
 script = ExtResource("3_4gbpe")
 type = 1
+intent = SubResource("Resource_4qqpp")
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="."]
 script = ExtResource("4_o12fj")
+intent = SubResource("Resource_a6qw0")
