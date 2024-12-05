@@ -20,6 +20,7 @@ func perform_action():
 		return
 	var block_effect := BlockEffect.new()
 	block_effect.amount = mega_block
+	block_effect.sound = sound
 	block_effect.execute([enemy])
 
 	get_tree().create_timer(0.6).timeout.connect(func(): Events.enemy_action_completed.emit(enemy))
